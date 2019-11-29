@@ -1,0 +1,75 @@
+package com.tgr.Utilities;
+
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.tgr.accelerators.Base;
+
+public class Excel extends Base {
+
+	private static final Logger log = LogManager.getLogger(Excel.class.getName());
+
+	private static Workbook wb;
+	private static Sheet sh;
+	private static Row row;
+	private static Cell cell;
+	private static int rowCount;
+	private static int colCount;
+	private static String[][] excelStringArray;
+	private static List<String> excelList;
+	private static HashMap<Integer, String> excelMap;
+	private static DataFormatter objDefaultFormat;
+	private static FormulaEvaluator objFormulaEvaluator;
+
+	public static List<HashMap<String, String>> readSpecificTestData( String testCaseId)
+			throws IOException, MyOwnException {
+	    String fileName = System.getProperty("user.dir") + "\\src\\test\\resources\\TestData\\" + prop.getProperty("TestDataFileName");
+	    String sheetName= prop.getProperty("InitAppSheetName");
+		File file = new File(fileName);
+		wb = new XSSFWorkbook(new FileInputStream(file));
+	
+		sh = wb.getSheet(sheetName);
+
+		Row HeaderRow = sh.getRow(0);
+
+		for (int i = 1; i < sh.getPhysicalNumberOfRows(); i++) {
+			Row currentRow = sh.getRow(i);
+			
+			if (testCaseId.equalsIgnoreCase(currentRow.getCell(0).getStringCellValue())) {
+				
+				for (int j = 0; j < currentRow.getPhysicalNumberOfCells(); j++) {
+					Cell currentCell = currentRow.getCell(j);
+					switch (currentCell.getCellType()) {
+					case Cell.CELL_TYPE_STRING:
+						currentHash.put(HeaderRow.getCell(j).getStringCellValue(), currentCell.getStringCellValue());
+						break;
+					case Cell.CELL_TYPE_NUMERIC:
+						currentHash.put(HeaderRow.getCell(j).getStringCellValue(),
+								String.valueOf(currentCell.getNumericCellValue()));
+						break;
+					}
+
+				}
+				mydata.add(currentHash);
+				System.out.println("Username" + currentHash.get("Username"));
+
+			}
+		}
+		return mydata;
+	}
+
+}

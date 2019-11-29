@@ -1,0 +1,7 @@
+URL=https://www16.thegeneraltest.com
+browserType=chrome
+TestDataFileName=TestData
+InitAppSheetName=Sheet1
+TestCaseId=TC001
+TestCaseFileName=PolicyDetails
+PolicyDetails=Sheet1

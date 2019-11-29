@@ -1,0 +1,97 @@
+package com.tgr.PageObjects;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.tgr.Utilities.MyOwnException;
+
+import wrapper.classes.methods.MyWait;
+import wrapper.classes.methods.MyWebElement;
+
+public class VehiclesPage extends CommonPage {
+
+	private static final Logger log = LogManager.getLogger(VehiclesPage.class.getName());
+
+	WebDriver ldriver;
+	ExtentTest testCase;
+
+	public VehiclesPage(WebDriver driver) {
+		super(driver);
+
+		this.ldriver = driver;
+		PageFactory.initElements(driver, this);
+	}
+
+	// ===================== PAGE OBJECTS ======================
+
+	@FindBy(how = How.ID, using = "yearOptions0")
+	public WebElement year;
+	@FindBy(how = How.ID, using = "makeOptions0")
+	public WebElement make;
+	@FindBy(how = How.ID, using = "modelOptions0")
+	public WebElement model;
+	@FindBy(how = How.ID, using = "typeOptions0")
+	public WebElement type;
+	@FindBy(how = How.ID, using = "ownOrLeaseOptions0")
+	public WebElement ownOrLeaseOptions;
+	@FindBy(how = How.ID, using = "primaryVehicleUse0")
+	public WebElement primaryVehicleUse;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"vehicle1\"]/div[12]/div[1]/div/label[2]")
+	public WebElement vehicleUse;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"vehicle1\"]/div[13]/div/div/label[2]")
+	public WebElement antiTheft;
+
+	@FindBy(how = How.LINK_TEXT, using = "Continue")
+	public WebElement continueLink;
+
+	// ===================== PAGE METHODS ======================
+
+	public void vehiclesInfo() throws InterruptedException, MyOwnException {
+
+		log.info("METHOD(login) EXECUTION STARTED SUCCESSFULLY");
+		try {
+			MyWait.until(ldriver, "ELEMENT_VISIBLE", 90, continueLink);
+			Select yearOfVehicle = new Select(year);
+			yearOfVehicle.selectByVisibleText("2008");
+			Select makeOfVehicle = new Select(make);
+			makeOfVehicle.selectByVisibleText("AUDI");
+			Select modelOfVehicle = new Select(model);
+			modelOfVehicle.selectByVisibleText("A3 3.2 QUATTRO S-LINE");
+			Select typeOfVehicle = new Select(type);
+			typeOfVehicle.selectByVisibleText("Wagon 4Dr 3.2-liter 6-Cyl");
+			if (currentHash.get("state").equals("NC")) {
+				Select ownOrLeaseOptionsOfVehicle = new Select(ownOrLeaseOptions);
+				ownOrLeaseOptionsOfVehicle.selectByVisibleText("Owned (not making payments)");
+				Select primaryvehicleUse = new Select(primaryVehicleUse);
+				primaryvehicleUse.selectByVisibleText("Pleasure");
+			} else {
+
+				Select ownOrLeaseOptionsOfVehicle = new Select(ownOrLeaseOptions);
+				ownOrLeaseOptionsOfVehicle.selectByVisibleText("Owned (not making payments)");
+				vehicleUse.click();
+			}
+			if (currentHash.get("state").equals("WA")) {
+				antiTheft.click();
+			}
+			continueLink.click();
+
+		} catch (AssertionError exp) {
+			log.error(exp.getMessage());
+
+			throwException("UNABLE TO open INTO THE TGR APPLICATION FROM THE METHOD login\n" + exp.getMessage() + "\n");
+		} catch (Exception exp) {
+			log.error(exp.getMessage());
+
+			throwException("UNABLE TO open INTO THE TGR APPLICATION FROM THE METHOD login\n" + exp.getMessage() + "\n");
+		}
+		log.info("METHOD(login) EXECUTED SUCCESSFULLY");
+	}
+
+}

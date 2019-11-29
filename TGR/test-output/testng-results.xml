@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Parameterization Test Suite" duration-ms="1567605" started-at="2019-11-20T17:07:11 IST" finished-at="2019-11-20T17:33:18 IST">
+    <groups>
+    </groups>
+    <test name="TestCase1" duration-ms="159905" started-at="2019-11-20T17:07:11 IST" finished-at="2019-11-20T17:09:51 IST">
+      <class name="com.tgr.TestScripts.TGQTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@7b69c6ba]" name="setup" is-config="true" duration-ms="615" started-at="2019-11-20T17:07:11 IST" finished-at="2019-11-20T17:07:12 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datadriven]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGQTestCase@7b69c6ba]" name="TC1" duration-ms="158394" started-at="2019-11-20T17:07:12 IST" finished-at="2019-11-20T17:09:50 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@7b69c6ba]" name="close" is-config="true" duration-ms="831" started-at="2019-11-20T17:09:50 IST" finished-at="2019-11-20T17:09:51 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4f6fe1c9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGQTestCase -->
+    </test> <!-- TestCase1 -->
+    <test name="TestCase2" duration-ms="190643" started-at="2019-11-20T17:09:51 IST" finished-at="2019-11-20T17:13:02 IST">
+      <class name="com.tgr.TestScripts.TGQTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@b7dd107]" name="setup" is-config="true" duration-ms="140" started-at="2019-11-20T17:09:51 IST" finished-at="2019-11-20T17:09:51 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datadriven]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGQTestCase@b7dd107]" name="TC1" duration-ms="189624" started-at="2019-11-20T17:09:51 IST" finished-at="2019-11-20T17:13:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@b7dd107]" name="close" is-config="true" duration-ms="867" started-at="2019-11-20T17:13:01 IST" finished-at="2019-11-20T17:13:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@10eb1492]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGQTestCase -->
+    </test> <!-- TestCase2 -->
+    <test name="TestCase3" duration-ms="187323" started-at="2019-11-20T17:13:02 IST" finished-at="2019-11-20T17:16:09 IST">
+      <class name="com.tgr.TestScripts.TGQTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@43bd930a]" name="setup" is-config="true" duration-ms="112" started-at="2019-11-20T17:13:02 IST" finished-at="2019-11-20T17:13:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datadriven]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGQTestCase@43bd930a]" name="TC1" duration-ms="186266" started-at="2019-11-20T17:13:02 IST" finished-at="2019-11-20T17:16:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@43bd930a]" name="close" is-config="true" duration-ms="911" started-at="2019-11-20T17:16:08 IST" finished-at="2019-11-20T17:16:09 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@284f822d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGQTestCase -->
+    </test> <!-- TestCase3 -->
+    <test name="TestCase4" duration-ms="189259" started-at="2019-11-20T17:16:09 IST" finished-at="2019-11-20T17:19:18 IST">
+      <class name="com.tgr.TestScripts.TGQTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@8e24743]" name="setup" is-config="true" duration-ms="88" started-at="2019-11-20T17:16:09 IST" finished-at="2019-11-20T17:16:09 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC004]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datadriven]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGQTestCase@8e24743]" name="TC1" duration-ms="188261" started-at="2019-11-20T17:16:09 IST" finished-at="2019-11-20T17:19:17 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@8e24743]" name="close" is-config="true" duration-ms="894" started-at="2019-11-20T17:19:17 IST" finished-at="2019-11-20T17:19:18 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4c52915a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGQTestCase -->
+    </test> <!-- TestCase4 -->
+    <test name="TestCase5" duration-ms="195108" started-at="2019-11-20T17:19:18 IST" finished-at="2019-11-20T17:22:33 IST">
+      <class name="com.tgr.TestScripts.TGQTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@543c6f6d]" name="setup" is-config="true" duration-ms="75" started-at="2019-11-20T17:19:18 IST" finished-at="2019-11-20T17:19:18 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC005]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datadriven]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGQTestCase@543c6f6d]" name="TC1" duration-ms="194130" started-at="2019-11-20T17:19:18 IST" finished-at="2019-11-20T17:22:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@543c6f6d]" name="close" is-config="true" duration-ms="897" started-at="2019-11-20T17:22:33 IST" finished-at="2019-11-20T17:22:33 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7c0350b0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGQTestCase -->
+    </test> <!-- TestCase5 -->
+    <test name="TestCase6" duration-ms="188844" started-at="2019-11-20T17:22:33 IST" finished-at="2019-11-20T17:25:42 IST">
+      <class name="com.tgr.TestScripts.TGQTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@75881071]" name="setup" is-config="true" duration-ms="78" started-at="2019-11-20T17:22:33 IST" finished-at="2019-11-20T17:22:34 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC006]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Datadriven]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGQTestCase@75881071]" name="TC1" duration-ms="187703" started-at="2019-11-20T17:22:34 IST" finished-at="2019-11-20T17:25:41 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGQTestCase@75881071]" name="close" is-config="true" duration-ms="1056" started-at="2019-11-20T17:25:41 IST" finished-at="2019-11-20T17:25:42 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@34049426]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGQTestCase -->
+    </test> <!-- TestCase6 -->
+    <test name="TestCase7" duration-ms="121650" started-at="2019-11-20T17:25:42 IST" finished-at="2019-11-20T17:27:44 IST">
+      <class name="com.tgr.TestScripts.TGRTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGRTestCase@396e2f39]" name="setup" is-config="true" duration-ms="106" started-at="2019-11-20T17:25:42 IST" finished-at="2019-11-20T17:25:42 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestData]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGRTestCase@396e2f39]" name="TC1" duration-ms="120504" started-at="2019-11-20T17:25:42 IST" finished-at="2019-11-20T17:27:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGRTestCase@396e2f39]" name="close" is-config="true" duration-ms="1036" started-at="2019-11-20T17:27:43 IST" finished-at="2019-11-20T17:27:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@608e2661]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGRTestCase -->
+    </test> <!-- TestCase7 -->
+    <test name="TestCase8" duration-ms="120079" started-at="2019-11-20T17:27:44 IST" finished-at="2019-11-20T17:29:44 IST">
+      <class name="com.tgr.TestScripts.TGRTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGRTestCase@782663d3]" name="setup" is-config="true" duration-ms="98" started-at="2019-11-20T17:27:44 IST" finished-at="2019-11-20T17:27:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestData]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGRTestCase@782663d3]" name="TC1" duration-ms="119001" started-at="2019-11-20T17:27:44 IST" finished-at="2019-11-20T17:29:43 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGRTestCase@782663d3]" name="close" is-config="true" duration-ms="978" started-at="2019-11-20T17:29:43 IST" finished-at="2019-11-20T17:29:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@388ea36b]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGRTestCase -->
+    </test> <!-- TestCase8 -->
+    <test name="TestCase9" duration-ms="105501" started-at="2019-11-20T17:29:44 IST" finished-at="2019-11-20T17:31:30 IST">
+      <class name="com.tgr.TestScripts.TGRTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGRTestCase@2e3fc542]" name="setup" is-config="true" duration-ms="97" started-at="2019-11-20T17:29:44 IST" finished-at="2019-11-20T17:29:44 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestData]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGRTestCase@2e3fc542]" name="TC1" duration-ms="104572" started-at="2019-11-20T17:29:44 IST" finished-at="2019-11-20T17:31:29 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGRTestCase@2e3fc542]" name="close" is-config="true" duration-ms="829" started-at="2019-11-20T17:31:29 IST" finished-at="2019-11-20T17:31:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@5e6ef21a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGRTestCase -->
+    </test> <!-- TestCase9 -->
+    <test name="TestCase10" duration-ms="108843" started-at="2019-11-20T17:31:30 IST" finished-at="2019-11-20T17:33:18 IST">
+      <class name="com.tgr.TestScripts.TGRTestCase">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.tgr.TestScripts.TGRTestCase@43a0cee9]" name="setup" is-config="true" duration-ms="68" started-at="2019-11-20T17:31:30 IST" finished-at="2019-11-20T17:31:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TC004]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestData]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="TC1()[pri:0, instance:com.tgr.TestScripts.TGRTestCase@43a0cee9]" name="TC1" duration-ms="107852" started-at="2019-11-20T17:31:30 IST" finished-at="2019-11-20T17:33:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC1 -->
+        <test-method status="PASS" signature="close(org.testng.ITestContext)[pri:0, instance:com.tgr.TestScripts.TGRTestCase@43a0cee9]" name="close" is-config="true" duration-ms="921" started-at="2019-11-20T17:33:18 IST" finished-at="2019-11-20T17:33:18 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@4edbf855]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.tgr.TestScripts.TGRTestCase -->
+    </test> <!-- TestCase10 -->
+  </suite> <!-- Parameterization Test Suite -->
+</testng-results>

@@ -1,0 +1,39 @@
+package com.tgr.Utilities;
+
+import java.util.Properties;
+
+public class ConfigProperties {
+	public static Properties loadFrom(String propertyFilePath, String propertyFileName) throws MyOwnException {
+
+		log.info("INTEND TO LOAD USER CONFIGURATION PARAMETERS FROM PROPERTIES FILE");
+		try {
+			if (notEmpty(propertyFileName)) {
+				if (formatGiven(propertyFileName) == true) {
+					fileFormat = getFileFormat(propertyFileName);
+					if (fileFormatIs(".properties")) {
+						file = createFileInstance(propertyFilePath + propertyFileName);
+						fs = readFile(file);
+						properties = createPropertiesInstance();
+						loadProperties(fs);
+					} else {
+						log.error("FILE FORMAT SEEMS TO BE INCORRECT");
+						throwException("FILE FORMAT SEEMS TO BE INCORRECT" + "\n");
+					}
+				} else {
+					log.error("FILE FORMAT IS MISSING");
+					throwException("FILE FORMAT IS MISSING" + "\n");
+				}
+			} else {
+				log.error("FILE NAME SEEMS TO BE EMPTY");
+				throwException("FILE NAME SEEMS TO BE EMPTY" + "\n");
+			}
+		} catch (Exception e) {
+			log.error("UNABLE TO LOAD USER PROPERTIES FROM THE FILE(" + propertyFileName + ")\n" + e.getMessage());
+			throwException(
+					"UNABLE TO LOAD USER PROPERTIES FROM THE FILE(" + propertyFileName + ")\n" + e.getMessage() + "\n");
+		}
+		log.info("SUCCESSFULLY LOADED USER CONFIGURATION PARAMETERS FROM PROPERTY FILE(" + propertyFileName
+				+ ") UNDER THE LOCATION(" + propertyFilePath + ")");
+		return properties;
+	}
+}

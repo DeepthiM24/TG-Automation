@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="com.tgr.Utilities.ConfigProperties"/>
+<fullyQualifiedTypeName name="com.tgr.accelerators.Base"/>
+<fullyQualifiedTypeName name="com.tgr.Utilities.Excel"/>
+<fullyQualifiedTypeName name="com.tgr.PageObjects.AllPages"/>
+<fullyQualifiedTypeName name="com.tgq.PageObjects.TGQAllPages"/>
+<fullyQualifiedTypeName name="com.tgq.PageObjects.CommonPage"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+<fullyQualifiedTypeName name="com.tgr.PageObjects.WorkFlow"/>
+<fullyQualifiedTypeName name="com.tgq.TGQPageObjects.TGQAllPages"/>
+<fullyQualifiedTypeName name="wrapper.classes.methods.MyWait"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="wrapper.classes.methods.MyWebElement"/>
+</qualifiedTypeNameHistroy>

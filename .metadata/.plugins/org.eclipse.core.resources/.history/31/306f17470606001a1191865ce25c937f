@@ -1,0 +1,166 @@
+package com.tgr.accelerators;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.testng.ITestContext;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+
+import com.tgr.PageObjects.AllPages;
+import com.tgr.Utilities.ConfigProperties;
+import com.tgr.Utilities.MyOwnException;
+
+public class Base {
+
+	private static final Logger log = LogManager.getLogger(Base.class.getName());
+
+	public static EventFiringWebDriver driver;
+	public static String sBrowserType = "";
+	public static WebDriver webDriver;
+	public static String sBrowser;
+	public static String quoteNumber;
+	public static String screenShotFolderPath;
+	public static String relatedToATrustIssuerGlobal;
+	public static String withOrWithoutCrossGlobal;
+	public static String datepattern = "dd/MM/yyyy";
+	public static String dateInString = new SimpleDateFormat(datepattern).format(new Date());
+	private static final String Name_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	public static String ReferenceNumber = "";
+	public static AllPages trackerspages;
+	public static String revisedfilename = "";
+	public static boolean result;
+	public static Actions action;
+	public static String fileFormat = "";
+	public static File file;
+	public static FileInputStream fs;
+	public static FileOutputStream os;
+	public static Properties properties;
+	public static Properties configProps;
+	public static String documentPath;
+
+	public static HashMap<String, String> currentHash = new HashMap<String, String>();
+	public static List<HashMap<String, String>> mydata = new ArrayList<HashMap<String, String>>();
+	private static Workbook wb;
+	private static Sheet sh;
+	public static Map<String, String> IULoginMap = null;
+
+	@BeforeClass
+	@Parameters({ "testCaseId" })
+	public void setup(ITestContext ctx, String testCaseId) throws MyOwnException {
+
+		log.info("BEFORE CLASS EXECUTION STARTED SUCCESSFULLY");
+		try {
+			System.out.println("start of before class");
+			configProps = ConfigProperties.loadFrom(System.getProperty("user.dir") + "\\", "config.properties");
+			System.out.println(configProps);
+			trackerspages = new AllPages(webDriver);
+			System.out.println("end of before class");
+			String sampleString = testCaseId;
+			String[] items = sampleString.split(",");
+			List<String> itemList = Arrays.asList(items);
+			System.out.println(itemList);
+			for (int i = 0; i < itemList.size(); i++) {
+				System.out.println(itemList.get(i));
+				readSpecificTestData(itemList.get(i));
+
+			}
+		} catch (Exception exp) {
+			log.error(exp.getMessage());
+			throwException("UNABLE TO EXECUTE BEFORE CLASS SECTION : \n" + exp.getMessage() + "\n");
+		}
+		log.info("BEFORE CLASS EXECUTED SUCCESSFULLY");
+	}
+
+	public static List<HashMap<String, String>> readSpecificTestData(String testCaseId) throws Exception {
+		String fileName = System.getProperty("user.dir") + "\\TestData\\" + configProps.getProperty("TestDataFileName")
+				+ ".xlsx";
+		String sheetName = configProps.getProperty("InitAppSheetName");
+		InputStream file = new FileInputStream(fileName);
+		wb = WorkbookFactory.create(file);
+
+		sh = wb.getSheet(sheetName);
+
+		Row HeaderRow = sh.getRow(0);
+
+		for (int i = 1; i < sh.getPhysicalNumberOfRows(); i++) {
+			Row currentRow = sh.getRow(i);
+
+			if (testCaseId.equalsIgnoreCase(currentRow.getCell(0).getStringCellValue())) {
+
+				for (int j = 0; j < currentRow.getPhysicalNumberOfCells(); j++) {
+					Cell currentCell = currentRow.getCell(j);
+					switch (currentCell.getCellType()) {
+					case Cell.CELL_TYPE_STRING:
+						currentHash.put(HeaderRow.getCell(j).getStringCellValue(), currentCell.getStringCellValue());
+						break;
+					case Cell.CELL_TYPE_NUMERIC:
+						currentHash.put(HeaderRow.getCell(j).getStringCellValue(),
+								String.valueOf(currentCell.getNumericCellValue()));
+						break;
+					}
+
+				}
+				mydata.add(currentHash);
+				System.out.println(mydata);
+				System.out.println("Username" + currentHash.get("Username"));
+
+			}
+		}
+		return mydata;
+	}
+
+	public static String randomNameString(int count) {
+		StringBuilder builder = new StringBuilder();
+		while (count-- != 0) {
+			int character = (int) (Math.random() * Name_STRING.length());
+			builder.append(Name_STRING.charAt(character));
+		}
+		return builder.toString();
+	}
+
+	public static void throwException(String message) throws MyOwnException {
+		throw new MyOwnException(message);
+	}
+
+	@AfterClass(alwaysRun = true)
+	public static void close(ITestContext itx) throws Throwable {
+		try {
+			System.out.println("start of after class");
+			log.info("Start of Executing AfterClass method name: close() ");
+			log.info("End of Executing after class stuff");
+			System.out.println("end of after class");
+			webDriver.quit();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			log.error(e.getMessage());
+		}
+		log.info("End of Executing AfterClass method name: close() ");
+	}
+
+}

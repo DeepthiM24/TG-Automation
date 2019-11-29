@@ -1,0 +1,46 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameterization Test Suite">
+	<test name="TestCase1">
+		<parameter name="testCaseId" value="TC001" />
+		<parameter name="testDataFileName" value="TC001" />
+		<classes>
+			<class name="com.tgr.TestScripts.TGQTestCase" />
+		</classes>
+	</test>
+	<test name="TestCase2">
+		<parameter name="testCaseId" value="TC002" />
+
+		<classes>
+			<class name="com.tgr.TestScripts.TGQTestCase" />
+		</classes>
+	</test>
+	<test name="TestCase3">
+		<parameter name="testCaseId" value="TC003" />
+
+		<classes>
+			<class name="com.tgr.TestScripts.TGQTestCase" />
+		</classes>
+	</test>
+	<test name="TestCase4">
+		<parameter name="testCaseId" value="TC004" />
+
+		<classes>
+			<class name="com.tgr.TestScripts.TGQTestCase" />
+		</classes>
+	</test>
+	<test name="TestCase5">
+		<parameter name="testCaseId" value="TC005" />
+
+		<classes>
+			<class name="com.tgr.TestScripts.TGQTestCase" />
+		</classes>
+	</test>
+	<test name="TestCase6">
+		<parameter name="testCaseId" value="TC006" />
+
+		<classes>
+			<class name="com.tgr.TestScripts.TGQTestCase" />
+		</classes>
+	</test>
+
+</suite>

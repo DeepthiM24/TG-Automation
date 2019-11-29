@@ -1,0 +1,7 @@
+URL=https://www7.thegeneraltest.com
+browserType=chrome
+TestDataFileName=Datadriven
+InitAppSheetName=Sheet2
+TestCaseId=TC001
+TestCaseFileName=TestData
+PolicyDetails=Sheet1

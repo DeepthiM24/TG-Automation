@@ -1,0 +1,10 @@
+TGRURL=https://www2.thegeneraltest.com
+TGQURL=https://www8.pgactest.com/mars/login.jsp?logout=true&redirect=%2Fagency%2Fpolicymgr%2Fpolicy_Status.jsp%3FsearchString%3D6899564%26infoType%3Didcards_quote%26quote%3D%2520%25205681003
+TGRbrowserType=chrome
+TGQbrowserType=ie
+#TestDataFileName=TestData
+TestDataFileName=DataDriven
+InitAppSheetName=Sheet1
+TestCaseId=TC001
+TestCaseFileName=PolicyDetails
+PolicyDetails=Sheet1

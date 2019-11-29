@@ -1,0 +1,43 @@
+package com.tgr.Utilities;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.tgr.accelerators.Base;
+
+public class ConfigProperties extends Base {
+
+	private static final Logger log = LogManager.getLogger(ConfigProperties.class.getName());
+
+	
+
+	private static Properties createPropertiesInstance() throws MyOwnException {
+
+		log.info("INTEND TO CREATE AN INSTANCE OF PROPERTIES");
+		try {
+			properties = new Properties();
+			log.info("AN INSTANCE OF PROPERTIES CLASS CREATED");
+		} catch (Exception e) {
+			log.error("UNABLE TO CREATE AN INSTANCE OF PROPERTIES CLASS");
+			throwException("UNABLE TO CREATE AN INSTANCE OF PROPERTIES CLASS" + "\n");
+		}
+		log.info("SUCCESSFULLY CREATED AN INSTANCE OF PROPERTIES");
+		return properties;
+	}
+
+	private static void loadProperties(FileInputStream fs) throws MyOwnException {
+
+		log.info("INTEND TO LOAD PROPERTIES");
+		try {
+			properties.load(fs);
+			log.info("SUCCESSFULLY LOADED THE PROPERTY FILE");
+		} catch (IOException e) {
+			log.error("UNABLE TO LOAD THE PROPERTY FILE, PLEASE CHECK NAME OR LOCATION");
+			throwException("UNABLE TO LOAD THE PROPERTY FILE, PLEASE CHECK NAME OR LOCATION" + "\n");
+		}
+		log.info("SUCCESSFULLY LOADED PROPERTIES");
+	}
+
+}
